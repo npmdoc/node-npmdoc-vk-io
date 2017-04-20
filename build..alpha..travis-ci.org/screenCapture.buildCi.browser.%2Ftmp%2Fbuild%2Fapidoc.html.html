@@ -1,0 +1,839 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/negezor/vk-io#readme">vk-io (v3.1.4)</a>
+</h1>
+<h4>Module for easy work with vk api!</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vk-io">module vk-io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.vk-io">
+            function <span class="apidocSignatureSpan"></span>vk-io
+            <span class="apidocSignatureSpan">(options = {})</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vk-io.</span>attachments</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vk-io.</span>helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vk-io.</span>messages</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vk-io.attachments">module vk-io.attachments</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.attachments.getAttachment">
+            function <span class="apidocSignatureSpan">vk-io.attachments.</span>getAttachment
+            <span class="apidocSignatureSpan">(type, attachment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.attachments.getLargePhoto">
+            function <span class="apidocSignatureSpan">vk-io.attachments.</span>getLargePhoto
+            <span class="apidocSignatureSpan">(photo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.attachments.getMediumPhoto">
+            function <span class="apidocSignatureSpan">vk-io.attachments.</span>getMediumPhoto
+            <span class="apidocSignatureSpan">(photo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.attachments.getSmallPhoto">
+            function <span class="apidocSignatureSpan">vk-io.attachments.</span>getSmallPhoto
+            <span class="apidocSignatureSpan">(photo)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vk-io.helpers">module vk-io.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.helpers.parseForm">
+            function <span class="apidocSignatureSpan">vk-io.helpers.</span>parseForm
+            <span class="apidocSignatureSpan">($)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.helpers.parseSecurityForm">
+            function <span class="apidocSignatureSpan">vk-io.helpers.</span>parseSecurityForm
+            <span class="apidocSignatureSpan">(response, { login, phone }, $ = cheerio(response.body)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.vk-io.messages">module vk-io.messages</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.vk-io.messages.Message">
+            function <span class="apidocSignatureSpan">vk-io.messages.</span>Message
+            <span class="apidocSignatureSpan">(vk, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">vk-io.messages.</span>actions</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vk-io" id="apidoc.module.vk-io">module vk-io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.vk-io" id="apidoc.element.vk-io.vk-io">
+        function <span class="apidocSignatureSpan"></span>vk-io
+        <span class="apidocSignatureSpan">(options = {})</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class VK {
+	/**
+	 * ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
+	 *
+	 * @param {MainOptions} options
+	 */
+	constructor (options = {}) {
+		this.options = Object.assign({}, defaultMainOptions);
+		this.request = request.defaults({
+			method: 'POST',
+			json: true
+		});
+
+		this.api = new Api(this);
+		this.auth = new Auth(this);
+		this.upload = new Upload(this);
+		this.collect = new Collect(this);
+		this.longpoll = new Longpoll(this);
+
+		this._captchaHandler = null;
+
+		this.setOptions(options);
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ‚ÐµÐºÑƒÑ‰ÑƒÑŽ Ð²ÐµÑ€ÑÐ¸ÑŽ API
+	 *
+	 * @return {string}
+	 */
+	get API_VERSION () {
+		return API_VERSION;
+	}
+
+	/**
+	 * Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ñ‚Ð¾ÐºÐµÐ½
+	 *
+	 * @param {string} token
+	 *
+	 * @return {this}
+	 */
+	setToken (token) {
+		this.options.token = token;
+
+		return this;
+	}
+
+	/**
+	 * Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð¾Ð¿Ñ†Ð¸Ð¸
+	 *
+	 * @param {Object} options
+	 *
+	 * @return {this}
+	 */
+	setOptions (options) {
+		Object.assign(
+			this.options,
+			this._transformOptions(options)
+		);
+
+		return this;
+	}
+
+	/**
+	 * Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÑ‚ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº ÐºÐ°Ð¿Ñ‡Ð¸
+	 *
+	 * @param {?function} handler
+	 *
+	 * @return {this}
+	 */
+	setCaptchaHandler (handler) {
+		this._captchaHandler = handler;
+
+		return this;
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÐºÐ»Ð°ÑÑ Ð´Ð»Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ Ñ†ÐµÐ¿Ð¾Ñ‡ÐºÐ°Ð¼Ð¸ Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð²
+	 *
+	 * @return {Chain}
+	 */
+	chain () {
+		return new Chain(this);
+	}
+
+	/**
+	 * Ð’Ñ‹Ð·Ð¾Ð² Ñ…Ñ€Ð°Ð½Ð¸Ð¼Ð¾Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€Ñ‹
+	 *
+	 * @param {string} name
+	 * @param {Object} params
+	 *
+	 * @return {Promise}
+	 */
+	procedure (name, params) {
+		return this.api.call(`execute.${name}`, params);
+	}
+
+	/**
+	 * Ð£Ð¿Ñ€Ð¾Ñ‰Ñ‘Ð½Ð½Ñ‹Ð¹ Ð²Ñ‹Ð·Ð¾Ð² Ñ†ÐµÐ»Ð¾Ð¹ Ñ†ÐµÐ¿Ð¾Ñ‡ÐºÐ¸ Ð¼ÐµÑ‚Ð¾Ð´Ð°
+	 *
+	 * @param {string} method
+	 * @param {Array}  queues
+	 *
+	 * @return {Promise}
+	 */
+	executes (method, queues) {
+		return Chain.executes(this, method, queues);
+	}
+
+	/**
+	 * Ð&nbsp;Ð°Ð·Ð±Ð¸Ñ€Ð°ÐµÑ‚ ÑÑÑ‹Ð»ÐºÑƒ Ð’ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚Ðµ
+	 *
+	 * @param {string} uri
+	 *
+	 * @return {Promise}
+	 */
+	parseLink (uri) {
+		return parseLink(this.api, uri);
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ‚Ð¾ÐºÐµÐ½
+	 *
+	 * @return {?string}
+	 */
+	getToken () {
+		return this.options.token;
+	}
+
+	/**
+	 * Ð¡Ð¾Ð±Ð¸Ñ€Ð°ÐµÑ‚ Ð¿Ñ€Ð¸ÐºÑ€Ð¸Ð¿Ð»ÐµÐ½Ð¸Ðµ Ð¸Ð· Ð¿ÐµÑ€ÐµÐ´Ð°Ð½Ð½Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹
+	 *
+	 * @param {string} type
+	 * @param {mixed}  attachments
+	 *
+	 * @return {mixed}
+	 */
+	getAttachment (type, attachments) {
+		type = type.toLowerCase();
+
+		if (!Array.isArray(attachments)) {
+			return getAttachment(type, attachments);
+		}
+
+		return attachments.map((attachment) =&gt; getAttachment(type, attachment));
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° Ð¼Ð°Ð»ÐµÐ½ÑŒÐºÑƒÑŽ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸ÑŽ
+	 *
+	 * @param {Object} photo
+	 *
+	 * @return {string}
+	 */
+	getSmallPhoto (photo) {
+		return getSmallPhoto(photo);
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° ÑÑ€ÐµÐ´Ð½ÑŽÑŽ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸ÑŽ
+	 *
+	 * @param {Object} photo
+	 *
+	 * @return {string}
+	 */
+	getMediumPhoto (photo) {
+		return getMediumPhoto(photo);
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° Ð±Ð¾Ð»ÑŒÑˆÑƒÑŽ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸ÑŽ
+	 *
+	 * @param {Object} photo
+	 *
+	 * @return {string}
+	 */
+	getLargePhoto (photo) {
+		return getLargePhoto(photo);
+	}
+
+	/**
+	 * Ð&nbsp;Ð°Ð·Ð±Ð¸Ñ€Ð°ÐµÑ‚ Ð¾Ð¿Ñ†Ð¸Ð¸
+	 *
+	 * @param {Object} options
+	 *
+	 * @return {Object}
+	 */
+	_transformOptions (options) {
+		options = Object.assign({}, options);
+
+		if ('id' in options) {
+			options.id = +options.id;
+		}
+
+		if ('scope' in options) {
+			if (Array.isArray(options.scope)) {
+				options.scope = options.scope.join(',');
+			} else if (options.scope === 'all') {
+				options.scope = MAX_SCOPE.join(',');
+			}
+		}
+
+		if ('proxy' in options) {
+			let proxy = options.proxy;
+			delete options.proxy;
+
+			/* ÐÐ° ÑÐ»ÑƒÑ‡Ð°Ð¹ Ð»Ð°Ð¹Ñ„Ñ…Ð°ÐºÐ° :/ */
+			if (!proxy.startsWith('http')) {
+				proxy = 'http://' + proxy;
+			}
+
+			const { protocol, auth, host, path } = url.parse(proxy);
+
+			const params = {};
+
+			if (auth !== null) {
+				params.headers = {
+					'Proxy-Authorization': 'Basic ' + Buffer.from(auth).toString('base64')
+				};
+			}
+
+			params.proxy = `${protocol}//${host}${path || ''}`;
+
+			this.request = this.request.defaults(params);
+		}
+
+		return options;
+	}
+
+	/** Ð”Ð°Ð»ÑŒÑˆÐµ ÑƒÑÑ‚Ð°Ñ€ÐµÐ²ÑˆÐµÐµ */
+
+	setting (settings) {
+		debug('vk.setting depre ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vk-io.attachments" id="apidoc.module.vk-io.attachments">module vk-io.attachments</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.attachments.getAttachment" id="apidoc.element.vk-io.attachments.getAttachment">
+        function <span class="apidocSignatureSpan">vk-io.attachments.</span>getAttachment
+        <span class="apidocSignatureSpan">(type, attachment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(type, attachment) =&gt; (
+	type + attachment.owner_id + '_' + attachment.id
+)</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	console.log('Url small compare:', photo.photo_130 === urlSmall); // =&gt; true
+});
+```
+
+### getAttachment
+ÐŸÐ¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸ÐºÑ€ÐµÐ¿Ð»ÐµÐ½Ð¸Ñ Ñ [Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²](https://vk.com/dev/objects)
+```javascript
+vk.<span class="apidocCodeKeywordSpan">getAttachment</span>(type, attachment); // =&gt; array / string
+```
+
+| ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€   | Ð¢Ð¸Ð¿            | ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ            |
+|------------|----------------|---------------------|
+| type       | string         | Ð¢Ð¸Ð¿ Ð¿Ñ€Ð¸ÐºÑ€ÐµÐ¿Ð»ÐµÐ½Ð¸Ñ    |
+| attachment | array / object | ÐžÐ±ÑŠÐµÐºÑ‚ Ð¿Ñ€Ð¸ÐºÑ€ÐµÐ¿Ð»ÐµÐ½Ð¸Ñ |
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.attachments.getLargePhoto" id="apidoc.element.vk-io.attachments.getLargePhoto">
+        function <span class="apidocSignatureSpan">vk-io.attachments.</span>getLargePhoto
+        <span class="apidocSignatureSpan">(photo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(photo) =&gt; (
+	photo.photo_2560 || photo.photo_1280 || getMediumPhoto(photo)
+)</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Ð•ÑÐ»Ð¸ Ð¼ÐµÑ‚Ð¾Ð´ Ð½Ðµ Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ ÑÑÑ‹Ð»ÐºÑƒ Ð½Ð° Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸ÑŽ Ð¾Ð½ Ð±ÑƒÐ´ÐµÑ‚ Ð¸ÑÐºÐ°Ñ‚ÑŒ Ð¼ÐµÐ½ÑŒÑˆÐµÐ³Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð° Ð¿Ð¾ÐºÐ° Ð½Ðµ Ð½Ð°Ð¹Ð´Ñ‘Ñ‚ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ðµ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ
+
+#### getLargePhoto
+Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ñ `2560` Ð¸Ð»Ð¸ `1280`
+
+```javascript
+vk.<span class="apidocCodeKeywordSpan">getLargePhoto</span>(photo); // =&gt; string
+```
+
+| ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ | Ð¢Ð¸Ð¿    | ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ          |
+|----------|--------|-------------------|
+| photo    | object | ÐžÐ±ÑŠÐµÐºÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ |
+
+#### getMediumPhoto
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.attachments.getMediumPhoto" id="apidoc.element.vk-io.attachments.getMediumPhoto">
+        function <span class="apidocSignatureSpan">vk-io.attachments.</span>getMediumPhoto
+        <span class="apidocSignatureSpan">(photo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(photo) =&gt; (
+	photo.photo_807 || photo.photo_604 || getSmallPhoto(photo)
+)</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+|----------|--------|-------------------|
+| photo    | object | ÐžÐ±ÑŠÐµÐºÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ |
+
+#### getMediumPhoto
+Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ñ `807` Ð¸Ð»Ð¸ `604`
+
+```javascript
+vk.<span class="apidocCodeKeywordSpan">getMediumPhoto</span>(photo); // =&gt; string
+```
+
+| ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ | Ð¢Ð¸Ð¿    | ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ          |
+|----------|--------|-------------------|
+| photo    | object | ÐžÐ±ÑŠÐµÐºÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ |
+
+#### getSmallPhoto
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.attachments.getSmallPhoto" id="apidoc.element.vk-io.attachments.getSmallPhoto">
+        function <span class="apidocSignatureSpan">vk-io.attachments.</span>getSmallPhoto
+        <span class="apidocSignatureSpan">(photo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(photo) =&gt; (
+	photo.photo_130 || photo.photo_75
+)</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+|----------|--------|-------------------|
+| photo    | object | ÐžÐ±ÑŠÐµÐºÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ |
+
+#### getSmallPhoto
+Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ñ `130` Ð¸Ð»Ð¸ `75`
+
+```javascript
+vk.<span class="apidocCodeKeywordSpan">getSmallPhoto</span>(photo); // =&gt; string
+```
+
+| ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ | Ð¢Ð¸Ð¿    | ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ          |
+|----------|--------|-------------------|
+| photo    | object | ÐžÐ±ÑŠÐµÐºÑ‚ Ñ„Ð¾Ñ‚Ð¾Ð³Ñ€Ð°Ñ„Ð¸Ð¸ |
+
+#### ÐŸÑ€Ð¸Ð¼ÐµÑ€ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ñ Ð¼ÐµÑ‚Ð¾Ð´Ð°Ð¼Ð¸
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vk-io.helpers" id="apidoc.module.vk-io.helpers">module vk-io.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.helpers.parseForm" id="apidoc.element.vk-io.helpers.parseForm">
+        function <span class="apidocSignatureSpan">vk-io.helpers.</span>parseForm
+        <span class="apidocSignatureSpan">($)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseForm($) {
+	const $form = $('form[action][method]');
+
+	const fields = {};
+
+	for (const { name, value } of $form.serializeArray()) {
+		fields[name] = value;
+	}
+
+	return {
+		action: $form.attr('action'),
+		fields
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.helpers.parseSecurityForm" id="apidoc.element.vk-io.helpers.parseSecurityForm">
+        function <span class="apidocSignatureSpan">vk-io.helpers.</span>parseSecurityForm
+        <span class="apidocSignatureSpan">(response, { login, phone }, $ = cheerio(response.body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseSecurityForm(response, { login, phone }, $ = cheerio(response.body)) {
+	let number;
+
+	if (phone !== null) {
+		number = phone;
+	} else if (login !== null &amp;&amp; !login.includes('@')) {
+		number = login;
+	} else {
+		throw new AuthError({
+			message: 'Missing phone number in the phone or login field'
+		});
+	}
+
+	if (typeof number === 'string') {
+		number = number.trim().replace(/^(\+|00)/, '');
+	}
+
+	const $field = $('.field_prefix');
+
+	const prefix = $field.first().text().trim().replace('+', '').length;
+	const postfix  = $field.last().text().trim().length;
+
+	number = number.toString();
+
+	let { action, fields } = parseForm($);
+
+	fields.code = number.slice(prefix, number.length - postfix);
+
+	if (!action.startsWith('https://')) {
+		action = 'https://' + response.request.uri.host + action;
+	}
+
+	return {
+		action,
+		fields
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.vk-io.messages" id="apidoc.module.vk-io.messages">module vk-io.messages</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.vk-io.messages.Message" id="apidoc.element.vk-io.messages.Message">
+        function <span class="apidocSignatureSpan">vk-io.messages.</span>Message
+        <span class="apidocSignatureSpan">(vk, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Message extends BaseMessage {
+	/**
+	 * ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
+	 *
+	 * @param {VK}     vk
+	 * @param {Object} message
+	 */
+	constructor (vk, message) {
+		super(vk, message);
+
+		this.chat = null;
+
+		const attachments = message[7];
+
+		if (this.peer &gt; SHEAR_CHAT_PEER) {
+			this.user = +attachments.from;
+			this.title = unescape(message[5]);
+
+			this.chat = this.peer - SHEAR_CHAT_PEER;
+
+			this.from = 'chat';
+		} else if (this.peer &lt; 0) {
+			this.user = null;
+			this.title = null;
+
+			this.admin = +attachments.from_admin;
+
+			this.from = 'group';
+		} else {
+			this.user = this.peer;
+			this.title = null;
+
+			this.from = 'dialog';
+		}
+
+		if (message[6].length !== 0) {
+			this.text = unescape(message[6]).replace(brReplace, '\n');
+		} else {
+			this.text = null;
+		}
+
+		this.flags = parseFlags(message[2], this.isGroup());
+		this.attachments = parseAttachments(attachments);
+
+		this.hasEmoji = 'emoji' in attachments;
+
+		if ('geo' in attachments) {
+			this.attachments.geo = {
+				id: attachments.geo,
+				provider: +attachments.geo_provider
+			};
+		}
+
+		this._fwd = attachments.fwd || null;
+	}
+
+	/**
+	 * ÐžÑ‚Ð²ÐµÑ‡Ð°ÐµÑ‚ Ð½Ð° ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ
+	 *
+	 * @param {mixed}  text
+	 * @param {Object} params
+	 *
+	 * @return {Promise}
+	 */
+	reply (text, params = {}) {
+		if (typeof text === 'object') {
+			params = text;
+		} else {
+			params.message = text;
+		}
+
+		params.forward_messages = this.id;
+
+		return this.send(params);
+	}
+
+	/**
+	 * ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð°
+	 *
+	 * @param {string} name
+	 *
+	 * @return {boolean}
+	 */
+	hasFlag (name) {
+		return this.flags.includes(name);
+	}
+
+	/**
+	 * ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð¿Ñ€Ð¸ÐºÑ€Ð¸Ð¿Ð»ÐµÐ½Ð¸Ð¹
+	 *
+	 * @return {boolean}
+	 */
+	hasAttachments () {
+		return Object.keys(this.attachments).length &gt; 0;
+	}
+
+	/**
+	 * ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð¿Ñ€Ð¸ÐºÑ€Ð¸Ð¿Ð»ÐµÐ½Ð¸Ñ
+	 *
+	 * @param {string} name
+	 *
+	 * @return {boolean}
+	 */
+	hasAttachment (name) {
+		return name in this.attachments;
+	}
+
+	/**
+	 * ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð¿ÐµÑ€ÐµÑÑ‹Ð»Ð°ÐµÐ¼Ñ‹Ñ… ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ð¹
+	 *
+	 * @return {boolean}
+	 */
+	hasFwd () {
+		return this._fwd !== null;
+	}
+
+	/**
+	 * Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¸Ð· Ð´Ð¸Ð°Ð»Ð¾Ð³Ð°
+	 *
+	 * @return {boolean}
+	 */
+	isDialog () {
+		return this.from === 'dialog';
+	}
+
+	/**
+	 * Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¸Ð· Ð±ÐµÑÐµÐ´Ñ‹
+	 *
+	 * @return {boolean}
+	 */
+	isChat () {
+		return this.from === 'chat';
+	}
+
+	/**
+	 * Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ Ð¸Ð· ÑÐ¾Ð¾Ð±Ñ‰ÐµÑÑ‚Ð²Ð°
+	 *
+	 * @return {boolean}
+	 */
+	isGroup () {
+		return this.from === 'group';
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð¿ÐµÑ€ÐµÑÑ‹Ð»Ð°ÐµÐ¼Ñ‹Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ
+	 *
+	 * @return {Array}
+	 */
+	getFwd () {
+		if (!this.hasFwd()) {
+			return [];
+		}
+
+		if (Array.isArray(this._fwd)) {
+			return this._fwd;
+		}
+
+		this._fwd = parseFwds(this._fwd);
+
+		return this._fwd;
+	}
+
+	/**
+	 * Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð½ÑƒÐ¶Ð½Ð¾ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸
+	 *
+	 * @return object
+	 */
+	inspect (depth, options) {
+		const print = Object.assign(super.inspect(depth, options), {
+			user: this.user,
+			chat: this.chat,
+			title: this.title,
+			text: this.text,
+			from: this.from,
+			hasEmoji: this.hasEmoji,
+			flags: this.flags,
+			attachments: this.attachments
+		});
+
+		return this.constructor.name + ' ' + inspect(print, options);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
